@@ -34,9 +34,10 @@ chat-service/dist
 *.sln
 *.sw?
 
-# Documentation files (keep only README.md)
+# Documentation files (keep only README.md and test docs)
 *.md
 !README.md
+!test/**/*.md
 
 # Docker volumes
 mysql_data
