@@ -1,0 +1,30 @@
+version: '3.8'
+
+# 前端Web服务独立部署配置
+services:
+  # 前端Web服务
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ecommerce_frontend
+    restart: unless-stopped
+    environment:
+      # 后端API地址（如果后端不在同一网络，使用外部地址）
+      BACKEND_URL: ${BACKEND_URL:-http://backend:3000}
+      CHAT_SERVICE_URL: ${CHAT_SERVICE_URL:-http://chat-service:3001}
+    ports:
+      - "${FRONTEND_PORT:-80}:80"
+    networks:
+      - frontend_network
+    healthcheck:
+      test: ["CMD", "nginx", "-t"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  frontend_network:
+    driver: bridge
+
+

@@ -1,0 +1,69 @@
+
+
+.pageWrapper {
+  background-color: #F9FAFB;
+  min-height: 100vh;
+}
+
+.sidebarCollapsed {
+  width: 56px;
+}
+
+.sidebarExpanded {
+  width: 200px;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.navLink:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+}
+
+.categoryItem:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+  color: #3B82F6;
+}
+
+.successAnimation {
+  animation: bounceIn 0.6s ease-out;
+}
+
+.failAnimation {
+  animation: shakeIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shakeIn {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+

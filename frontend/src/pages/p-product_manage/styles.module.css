@@ -1,0 +1,61 @@
+
+
+.pageWrapper {
+  background-color: #F9FAFB;
+  min-height: 100vh;
+}
+
+.sidebarCollapsed {
+  width: 56px;
+}
+
+.sidebarExpanded {
+  width: 200px;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.navLink:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+}
+
+.navLink.active {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+  border-right: 3px solid #3B82F6;
+}
+
+.tableRow:hover {
+  background-color: rgba(59, 130, 246, 0.02);
+}
+
+.modalBackdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.statusBadgeActive {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+}
+
+.statusBadgeInactive {
+  background-color: rgba(107, 114, 128, 0.1);
+  color: #6B7280;
+}
+

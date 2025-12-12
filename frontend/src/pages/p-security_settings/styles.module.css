@@ -1,0 +1,112 @@
+
+
+/* 页面包装器 - 来自body样式 */
+.pageWrapper {
+  background-color: #F9FAFB;
+  min-height: 100vh;
+}
+
+/* 侧边栏样式 */
+.sidebarCollapsed {
+  width: 56px;
+}
+
+.sidebarExpanded {
+  width: 200px;
+}
+
+/* 导航链接样式 */
+.navLink:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+}
+
+.navLink.active {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+  border-right: 3px solid #3B82F6;
+}
+
+/* 设置卡片样式 */
+.settingCard {
+  transition: all 0.2s ease-in-out;
+}
+
+.settingCard:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* 切换开关样式 */
+.toggleSwitch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.toggleSwitch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.toggleSwitch input:checked + .slider {
+  background-color: #3B82F6;
+}
+
+.toggleSwitch input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* 输入框焦点样式 */
+.inputFocus:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* 状态标签样式 */
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.statusEnabled {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+}
+
+.statusDisabled {
+  background-color: rgba(107, 114, 128, 0.1);
+  color: #6B7280;
+}
+

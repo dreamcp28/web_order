@@ -1,0 +1,48 @@
+
+
+.pageWrapper {
+  background-color: #F9FAFB;
+  min-height: 100vh;
+}
+
+.sidebarCollapsed {
+  width: 56px;
+}
+
+.sidebarExpanded {
+  width: 200px;
+}
+
+.navLink:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+}
+
+.navLinkActive {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+  border-right: 3px solid #3B82F6;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease-in-out;
+}
+
+.orderRow:hover {
+  background-color: rgba(59, 130, 246, 0.02);
+}
+
+.progressBar {
+  background: linear-gradient(90deg, #10B981 0%, #3B82F6 100%);
+}
+
+.notificationBadge {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+

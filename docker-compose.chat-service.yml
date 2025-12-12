@@ -1,0 +1,65 @@
+version: '3.8'
+
+# 智能客服服务独立部署配置
+services:
+  # MySQL 数据库（如果未单独部署）
+  mysql:
+    image: mysql:8.0
+    container_name: ecommerce_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-rootpassword}
+      MYSQL_DATABASE: ${DB_NAME:-ecommerce_db}
+      MYSQL_USER: ${DB_USERNAME:-ecommerce_user}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-ecommerce_password}
+      TZ: Asia/Shanghai
+    ports:
+      - "${DB_PORT:-3306}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - chat_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_ROOT_PASSWORD:-rootpassword}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # 智能客服服务
+  chat-service:
+    build:
+      context: ./chat-service
+      dockerfile: Dockerfile
+    container_name: ecommerce_chat_service
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+      BACKEND_URL: ${BACKEND_URL:-http://backend:3000}
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USERNAME: ${DB_USERNAME:-ecommerce_user}
+      DB_PASSWORD: ${DB_PASSWORD:-ecommerce_password}
+      DB_NAME: ${DB_NAME:-ecommerce_db}
+    ports:
+      - "${CHAT_SERVICE_PORT:-3001}:3001"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - chat_network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  chat_network:
+    driver: bridge
+
+

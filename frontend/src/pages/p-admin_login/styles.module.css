@@ -1,0 +1,42 @@
+
+
+.pageWrapper {
+  background: linear-gradient(to bottom right, #F9FAFB, #EFF6FF);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.loginButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.loginButton:active {
+  transform: translateY(0);
+}
+
+.errorMessage {
+  display: none;
+}
+
+.errorMessage.show {
+  display: block;
+}
+
+.successMessage {
+  display: none;
+}
+
+.successMessage.show {
+  display: block;
+}
+

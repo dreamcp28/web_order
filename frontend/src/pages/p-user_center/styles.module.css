@@ -1,0 +1,83 @@
+
+
+.pageWrapper {
+  background-color: #F9FAFB;
+  min-height: 100vh;
+}
+
+.sidebarCollapsed {
+  width: 56px;
+}
+
+.sidebarExpanded {
+  width: 200px;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.navLink:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+}
+
+.categoryItem:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+  color: #3B82F6;
+}
+
+.orderItem:hover {
+  background-color: rgba(59, 130, 246, 0.02);
+}
+
+.statusBadgePending {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.statusBadgePaid {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.statusBadgeCancelled {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+.tabActive {
+  background-color: #3B82F6;
+  color: white;
+}
+
+.tabInactive {
+  background-color: #F3F4F6;
+  color: #6B7280;
+}
+
+.tabInactive:hover {
+  background-color: #E5E7EB;
+}
+
+.modalBackdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalEnter {
+  animation: modalEnter 0.3s ease-out;
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
